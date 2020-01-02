@@ -1,0 +1,12 @@
+[Unit]
+Description=PM10 Data Inserting Service
+After=multi-user.target
+
+[Service]
+Type=forking
+ExecStart=/bin/python3.6 /opt/airGraph/airGraphDataSetup.py 
+Restart=always
+PIDFile=/tmp/airDaemon.pid
+
+[Install]
+WantedBy=multi-user.target
